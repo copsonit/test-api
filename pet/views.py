@@ -13,3 +13,6 @@ pet_app.add_url_rule('/pets/<pet_id>', view_func=pet_view,
 
 pet_app.add_url_rule('/pets/', defaults={'pet_id': None},
                      view_func=pet_view, methods=['GET',])
+
+# POST method
+pet_app.add_url_rule('/pets/', view_func=pet_view, methods=['POST',])
