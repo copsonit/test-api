@@ -4,7 +4,7 @@
 #
 
 # Pull base image.
-FROM python
+FROM python:3.10-slim-bookworm
 
 # make a local directory
 RUN mkdir /opt/test-api
