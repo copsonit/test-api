@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "80:5000"
+    volumes:
+      - /home/copson/test-api:/opt/test-api  # The first is source dir, change to where it is cloned.
+    links:
+      - db:mongodb
+    container_name: testapi_web_1
+    depends_on:
+      - db
+  db: # We are planning to use mongo, include it in the image.
+    image: mongo
+    container_name: testapi_db_1
